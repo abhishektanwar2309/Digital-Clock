@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitle-Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: red;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            /* it centers the content vertically */
+            align-items: center; 
+            /* it centers the content horizontally  */
+            justify-content: center;
+        }
+        .click{
+            font-size: 150px;
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="click">3:15 AM</span>
+        <!-- <button>Pause</button> -->
+    </div>
+    <script>
+        const getTime=()=>
+        {
+            let dateObj=new Date();
+            let hh=dateObj.getHours();
+            let mm=dateObj.getMinutes();
+            let ss=dateObj.getSeconds();
+            return `${hh} : ${mm} : ${ss}`;
+        };
+        setInterval(()=>{
+            // console.log(getTime());
+            let clockObj=document.querySelector('.click');
+            clockObj.innerHTML=getTime();
+        },1000);
+    </script>
+
+</body>
+</html>
