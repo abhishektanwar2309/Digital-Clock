@@ -39,20 +39,24 @@
         const getTime=()=>
         {
             let dateObj=new Date();
-            let hh=dateObj.getHours();
-            hh=hh>9?hh:'0'+hh;
-            let mm=dateObj.getMinutes();
-            mm=mm>9?mm:'0'+mm;
-            let ss=dateObj.getSeconds();
-            ss=ss>9?ss:'0'+ss;
-            let amPM="A.M.";
-            //code for keeping the hours till 12 
-            if(hh>12){
-                hh=hh%12;
-                amPM="P.M.";
-            }
-            return `${hh} : ${mm} : ${ss} ${amPM}`;
+            // let hh=dateObj.getHours();
+            // hh=hh>9?hh:'0'+hh;
+            // let mm=dateObj.getMinutes();
+            // mm=mm>9?mm:'0'+mm;
+            // let ss=dateObj.getSeconds();
+            // ss=ss>9?ss:'0'+ss;
+            // let amPM="A.M.";
+            // //code for keeping the hours till 12 
+            // if(hh>12){
+            //     hh=hh%12;
+            //     amPM="P.M.";
+            // }
+            // return `${hh} : ${mm} : ${ss} ${amPM}`;
+
+            //but the below shortcut does not keep the double digit format
+            return dateObj.toLocaleTimeString();
         };
+
         setInterval(()=>{
             // console.log(getTime());
             let clockObj=document.querySelector('.click');
