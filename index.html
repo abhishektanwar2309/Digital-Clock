@@ -42,7 +42,13 @@
             let hh=dateObj.getHours();
             let mm=dateObj.getMinutes();
             let ss=dateObj.getSeconds();
-            return `${hh} : ${mm} : ${ss}`;
+            let amPM="A.M.";
+            //code for keeping the hours till 12 
+            if(hh>12){
+                hh=hh%12;
+                amPM="P.M.";
+            }
+            return `${hh} : ${mm} : ${ss} ${amPM}`;
         };
         setInterval(()=>{
             // console.log(getTime());
